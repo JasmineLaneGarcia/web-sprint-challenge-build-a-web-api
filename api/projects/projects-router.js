@@ -70,7 +70,7 @@ router.put('/api/projects/:id', async (req, res) => {
     const { id } = req.params;
     const body = req.body;
 
-    if(!body.name && !body.description){
+    if(!body.name || !body.description){
         res.status(400).json({
             message:"Please fill out the required fields",
         });
